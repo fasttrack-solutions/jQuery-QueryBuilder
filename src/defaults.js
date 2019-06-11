@@ -57,6 +57,7 @@ QueryBuilder.selectors = {
   error_container:      '.error-container',
   condition_container:  '.rules-group-header .group-conditions',
   tooltip:              '.tooltip-container i',
+  description:          '.description-container',
 
   rule_header:          '.rule-header',
   group_header:         '.rules-group-header',
