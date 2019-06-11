@@ -2,18 +2,12 @@ QueryBuilder.templates.group = '\
 <div id="{{= it.group_id }}" class="rules-group-container"> \
   <div class="rules-group-header"> \
     <div class="btn-group pull-right group-actions"> \
-      <button type="button" class="btn btn-xs btn-success" data-add="rule"> \
-        <i class="{{= it.icons.add_rule }}"></i> {{= it.translate("add_rule") }} \
-      </button> \
+      <img src="/static/assets/add-icon.svg" style="width: 18px;" data-add="rule" title="{{= it.translate("add_rule") }}"/> &nbsp;\
       {{? it.settings.allow_groups===-1 || it.settings.allow_groups>=it.level }} \
-        <button type="button" class="btn btn-xs btn-success" data-add="group"> \
-          <i class="{{= it.icons.add_group }}"></i> {{= it.translate("add_group") }} \
-        </button> \
+        <img src="/static/assets/group-icon2.svg" style="width: 21px;" data-add="group" title="{{= it.translate("add_group") }}"/> \
       {{?}} \
       {{? it.level>1 }} \
-        <button type="button" class="btn btn-xs btn-danger" data-delete="group"> \
-          <i class="{{= it.icons.remove_group }}"></i> {{= it.translate("delete_group") }} \
-        </button> \
+        <img src="/static/assets/delete-icon.svg" style="width: 17px;" data-delete="group" title="{{= it.translate("delete_group") }}"/> \
       {{?}} \
     </div> \
     <div class="btn-group group-conditions"> \
@@ -34,19 +28,21 @@ QueryBuilder.templates.group = '\
 
 QueryBuilder.templates.rule = '\
 <div id="{{= it.rule_id }}" class="rule-container"> \
-  <div class="rule-header"> \
-    <div class="btn-group pull-right rule-actions"> \
-      <button type="button" class="btn btn-xs btn-danger" data-delete="rule"> \
-        <i class="{{= it.icons.remove_rule }}"></i> {{= it.translate("delete_rule") }} \
-      </button> \
+  <div class="rule-components"> \
+    <div class="rule-header"> \
+      <div class="btn-group pull-right rule-actions"> \
+        <img src="/static/assets/delete-icon.svg" style="width: 17px;" data-delete="rule" title="{{= it.translate("delete_rule") }}"/> \
+      </div> \
     </div> \
-  </div> \
-  {{? it.settings.display_errors }} \
-    <div class="error-container"><i class="{{= it.icons.error }}"></i></div> \
-  {{?}} \
-  <div class="rule-filter-container"></div> \
-  <div class="rule-operator-container"></div> \
-  <div class="rule-value-container"></div> \
+    {{? it.settings.display_errors }} \
+      <div class="error-container"><i class="{{= it.icons.error }}"></i></div> \
+    {{?}} \
+    <div class="rule-filter-container"></div> \
+    <div class="rule-operator-container"></div> \
+    <div class="rule-value-container"></div> \
+    <div class="tooltip-container"><i style="display:none; color: #1D1D1B" class="fa fa-question-circle" data-toggle="tooltip" data-placement="top" title=""></i></div> \
+  </div>\
+  <div class="description-container"></div> \
 </div>';
 
 QueryBuilder.templates.filterSelect = '\
@@ -265,6 +261,7 @@ QueryBuilder.prototype.getRuleInput = function(rule, value_id) {
     var name = rule.id + '_value_' + value_id;
     var c = filter.vertical ? ' class=block' : '';
     var h = '';
+    var placeholder = Array.isArray(filter.placeholder) ? filter.placeholder[value_id] : filter.placeholder;
 
     if (typeof filter.input == 'function') {
         h = filter.input.call(this, rule, name);
@@ -288,7 +285,7 @@ QueryBuilder.prototype.getRuleInput = function(rule, value_id) {
                 if (filter.rows) h += ' rows="' + filter.rows + '"';
                 if (validation.min !== undefined) h += ' minlength="' + validation.min + '"';
                 if (validation.max !== undefined) h += ' maxlength="' + validation.max + '"';
-                if (filter.placeholder) h += ' placeholder="' + filter.placeholder + '"';
+                if (placeholder) h += ' placeholder="' + placeholder + '"';
                 h += '></textarea>';
                 break;
 
@@ -297,14 +294,14 @@ QueryBuilder.prototype.getRuleInput = function(rule, value_id) {
                 if (validation.step !== undefined) h += ' step="' + validation.step + '"';
                 if (validation.min !== undefined) h += ' min="' + validation.min + '"';
                 if (validation.max !== undefined) h += ' max="' + validation.max + '"';
-                if (filter.placeholder) h += ' placeholder="' + filter.placeholder + '"';
+                if (placeholder) h += ' placeholder="' + placeholder + '"';
                 if (filter.size) h += ' size="' + filter.size + '"';
                 h += '>';
                 break;
 
             default:
                 h += '<input class="form-control" type="text" name="' + name + '"';
-                if (filter.placeholder) h += ' placeholder="' + filter.placeholder + '"';
+                if (placeholder) h += ' placeholder="' + placeholder + '"';
                 if (filter.type === 'string' && validation.min !== undefined) h += ' minlength="' + validation.min + '"';
                 if (filter.type === 'string' && validation.max !== undefined) h += ' maxlength="' + validation.max + '"';
                 if (filter.size) h += ' size="' + filter.size + '"';
