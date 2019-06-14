@@ -1,11 +1,7 @@
 {
-  "name": "jQuery-QueryBuilder",
-  "version": "2.5.0",
-  "author": {
-    "name": "Damien \"Mistic\" Sorel",
-    "email": "contact@git.strangeplanet.fr",
-    "url": "https://www.strangeplanet.fr"
-  },
+  "name": "@fasttrack-solutions/querybuilder",
+  "version": "1.0.3",
+  "author": "Damien \"Mistic\" Sorel <contact@git.strangeplanet.fr> (https://www.strangeplanet.fr)",
   "description": "jQuery plugin for user friendly query/filter creator",
   "main": "dist/js/query-builder.js",
   "dependencies": {
@@ -63,7 +59,7 @@
   "homepage": "https://querybuilder.js.org",
   "repository": {
     "type": "git",
-    "url": "git://github.com/mistic100/jQuery-QueryBuilder.git"
+    "url": "github.com:fasttrack-solutions/jQuery-QueryBuilder.git"
   },
   "bugs": {
     "url": "https://github.com/mistic100/jQuery-QueryBuilder/issues"
@@ -71,5 +67,9 @@
   "scripts": {
     "serve": "grunt serve",
     "test": "grunt test"
+  },
+  "directories": {
+    "example": "examples",
+    "test": "tests"
   }
 }
