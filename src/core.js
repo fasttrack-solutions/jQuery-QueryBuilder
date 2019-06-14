@@ -756,9 +756,12 @@ QueryBuilder.prototype.updateRuleFilter = function(rule, previousFilter) {
 
   rule.$el.find(QueryBuilder.selectors.rule_filter).val(rule.filter ? rule.filter.id : '-1');
   if(tooltip) {
-    rule.$el.find(QueryBuilder.selectors.tooltip).attr("title", tooltip).show();
+    rule.$el.find(QueryBuilder.selectors.tooltip).find('i').show();
+    rule.$el.find(QueryBuilder.selectors.tooltip).attr("data-tooltip", tooltip);
   }
-  rule.$el.find(QueryBuilder.selectors.description).html(description);
+  if(description) {
+    rule.$el.find(QueryBuilder.selectors.description).html(`<span>${description}</span>`);
+  }
   
   // clear rule data if the filter changed
   if (previousFilter && rule.filter && previousFilter.id !== rule.filter.id) {
@@ -955,7 +958,7 @@ QueryBuilder.prototype.updateError = function(node) {
 
           node.$el.addClass('has-error')
               .find(QueryBuilder.selectors.error_container).eq(0)
-              .attr('title', errorMessage);
+              .attr('data-tooltip', errorMessage);
       }
   }
 };

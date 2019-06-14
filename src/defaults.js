@@ -194,6 +194,6 @@ QueryBuilder.DEFAULTS = {
       remove_group: 'glyphicon glyphicon-remove',
       remove_rule:  'glyphicon glyphicon-remove',
       error:        'glyphicon glyphicon-warning-sign',
-      tooltip:      'glyphicon glyphicon-info-sign'
+      tooltip:      'glyphicon glyphicon-info-sign',
   }
 };
