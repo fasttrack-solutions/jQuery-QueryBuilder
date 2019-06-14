@@ -1,6 +1,6 @@
 {
-  "name": "@fasttrack-solutions/ft-querybuilder",
-  "version": "1.0.2",
+  "name": "@fasttrack-solutions/querybuilder",
+  "version": "1.0.4",
   "author": "Damien \"Mistic\" Sorel <contact@git.strangeplanet.fr> (https://www.strangeplanet.fr)",
   "description": "jQuery plugin for user friendly query/filter creator",
   "main": "dist/js/query-builder.js",
@@ -59,7 +59,7 @@
   "homepage": "https://querybuilder.js.org",
   "repository": {
     "type": "git",
-    "url": "git://github.com/mistic100/jQuery-QueryBuilder.git"
+    "url": "github.com:fasttrack-solutions/jQuery-QueryBuilder.git"
   },
   "bugs": {
     "url": "https://github.com/mistic100/jQuery-QueryBuilder/issues"
