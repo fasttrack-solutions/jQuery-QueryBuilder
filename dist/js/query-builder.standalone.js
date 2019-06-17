@@ -276,7 +276,7 @@
 
 
 /*!
- * jQuery QueryBuilder 1.0.6
+ * jQuery QueryBuilder 1.0.8
  * Copyright 2014-2019 Damien "Mistic" Sorel (http://www.strangeplanet.fr)
  * Licensed under MIT (https://opensource.org/licenses/MIT)
  */
@@ -2978,7 +2978,7 @@ QueryBuilder.templates.group = '\
       </div>\
       {{? it.settings.allow_groups===-1 || it.settings.allow_groups>=it.level }} \
         <div data-tooltip="{{= it.translate("add_group") }}">\
-          <img src="/static/assets/actiongroup.svg" style="width: 18px;" data-add="group"/> \
+          <img src="/static/icons/actiongroup.svg" style="width: 18px;" data-add="group"/> \
         </div>\
       {{?}} \
       {{? it.level>1 }} \
@@ -6420,7 +6420,7 @@ QueryBuilder.extend(/** @lends module:plugins.UniqueFilter.prototype */ {
 
 
 /*!
- * jQuery QueryBuilder 1.0.6
+ * jQuery QueryBuilder 1.0.8
  * Locale: English (en)
  * Author: Damien "Mistic" Sorel, http://www.strangeplanet.fr
  * Licensed under MIT (https://opensource.org/licenses/MIT)
