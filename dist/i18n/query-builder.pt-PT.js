@@ -1,5 +1,5 @@
 /*!
- * jQuery QueryBuilder 1.0.5
+ * jQuery QueryBuilder 1.0.6
  * Locale: Portuguese (pt-PT)
  * Author: Miguel Guerreiro, migas.csi@gmail.com
  * Licensed under MIT (https://opensource.org/licenses/MIT)
