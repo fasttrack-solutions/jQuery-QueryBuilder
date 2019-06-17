@@ -1,6 +1,6 @@
 {
   "name": "@fasttrack-solutions/querybuilder",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "author": "Damien \"Mistic\" Sorel <contact@git.strangeplanet.fr> (https://www.strangeplanet.fr)",
   "description": "jQuery plugin for user friendly query/filter creator",
   "main": "dist/js/query-builder.js",

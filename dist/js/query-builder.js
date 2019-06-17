@@ -1,5 +1,5 @@
 /*!
- * jQuery QueryBuilder 1.0.8
+ * jQuery QueryBuilder 1.0.9
  * Copyright 2014-2019 Damien "Mistic" Sorel (http://www.strangeplanet.fr)
  * Licensed under MIT (https://opensource.org/licenses/MIT)
  */
@@ -299,7 +299,7 @@ QueryBuilder.selectors = {
   value_container:      '.rule-value-container',
   error_container:      '.error-container',
   condition_container:  '.rules-group-header .group-conditions',
-  tooltip:              '.tooltip-container i',
+  tooltip:              '.tooltip-container',
   description:          '.description-container',
 
   rule_header:          '.rule-header',
@@ -6143,7 +6143,7 @@ QueryBuilder.extend(/** @lends module:plugins.UniqueFilter.prototype */ {
 
 
 /*!
- * jQuery QueryBuilder 1.0.8
+ * jQuery QueryBuilder 1.0.9
  * Locale: English (en)
  * Author: Damien "Mistic" Sorel, http://www.strangeplanet.fr
  * Licensed under MIT (https://opensource.org/licenses/MIT)
