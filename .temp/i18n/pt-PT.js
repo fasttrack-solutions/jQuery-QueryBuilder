@@ -5,18 +5,6 @@
  * Licensed under MIT (https://opensource.org/licenses/MIT)
  */
 
-(function(root, factory) {
-    if (typeof define == 'function' && define.amd) {
-        define(['jquery', 'query-builder'], factory);
-    }
-    else {
-        factory(root.jQuery);
-    }
-}(this, function($) {
-"use strict";
-
-var QueryBuilder = $.fn.queryBuilder;
-
 QueryBuilder.regional['pt-PT'] = {
   "__locale": "Portuguese (pt-PT)",
   "__author": "Miguel Guerreiro, migas.csi@gmail.com",
@@ -72,4 +60,3 @@ QueryBuilder.regional['pt-PT'] = {
 };
 
 QueryBuilder.defaults({ lang_code: 'pt-PT' });
-}));
