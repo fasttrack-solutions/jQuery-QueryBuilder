@@ -7,7 +7,7 @@ QueryBuilder.templates.group = '\
       </div>\
       {{? it.settings.allow_groups===-1 || it.settings.allow_groups>=it.level }} \
         <div data-tooltip="{{= it.translate("add_group") }}">\
-          <img src="/static/assets/actiongroup.svg" style="width: 18px;" data-add="group"/> \
+          <img src="/static/icons/actiongroup.svg" style="width: 18px;" data-add="group"/> \
         </div>\
       {{?}} \
       {{? it.level>1 }} \
