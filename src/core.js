@@ -760,7 +760,7 @@ QueryBuilder.prototype.updateRuleFilter = function(rule, previousFilter) {
     rule.$el.find(QueryBuilder.selectors.tooltip).attr("data-tooltip", tooltip);
   }
   if(description) {
-    rule.$el.find(QueryBuilder.selectors.description).html(`<span>${description}</span>`);
+    rule.$el.find(QueryBuilder.selectors.description).html('<span>' + description + '</span>');
   }
   
   // clear rule data if the filter changed
