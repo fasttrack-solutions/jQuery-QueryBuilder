@@ -1,5 +1,5 @@
 /*!
- * jQuery QueryBuilder 1.0.9
+ * jQuery QueryBuilder 1.0.10
  * Locale: Turkish (tr)
  * Author: Aykut Alpgiray Ateş
  * Licensed under MIT (https://opensource.org/licenses/MIT)

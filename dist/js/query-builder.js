@@ -1,5 +1,5 @@
 /*!
- * jQuery QueryBuilder 1.0.9
+ * jQuery QueryBuilder 1.0.10
  * Copyright 2014-2019 Damien "Mistic" Sorel (http://www.strangeplanet.fr)
  * Licensed under MIT (https://opensource.org/licenses/MIT)
  */
@@ -378,7 +378,7 @@ QueryBuilder.DEFAULTS = {
   conditions: ['AND', 'OR'],
   default_condition: 'AND',
   inputs_separator: ' , ',
-  select_placeholder: '------',
+  select_placeholder: 'Select Field',
   display_empty_filter: true,
   default_filter: null,
   optgroups: {},
@@ -1821,7 +1821,7 @@ QueryBuilder.prototype.getRules = function(options) {
                 type: rule.filter ? rule.filter.type : null,
                 input: rule.filter ? rule.filter.input : null,
                 operator: rule.operator ? rule.operator.type : null,
-                value: value
+                value: rule.filter.type == "boolean" ? (value ? "1" : "0") : value
             };
 
             if (rule.filter && rule.filter.data || rule.data) {
@@ -6143,7 +6143,7 @@ QueryBuilder.extend(/** @lends module:plugins.UniqueFilter.prototype */ {
 
 
 /*!
- * jQuery QueryBuilder 1.0.9
+ * jQuery QueryBuilder 1.0.10
  * Locale: English (en)
  * Author: Damien "Mistic" Sorel, http://www.strangeplanet.fr
  * Licensed under MIT (https://opensource.org/licenses/MIT)
