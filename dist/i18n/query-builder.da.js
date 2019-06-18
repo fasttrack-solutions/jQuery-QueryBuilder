@@ -1,5 +1,5 @@
 /*!
- * jQuery QueryBuilder 1.0.11
+ * jQuery QueryBuilder 1.0.12
  * Locale: Danish (da)
  * Author: Jna Borup Coyle, github@coyle.dk
  * Licensed under MIT (https://opensource.org/licenses/MIT)
