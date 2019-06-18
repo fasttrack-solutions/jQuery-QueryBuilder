@@ -1,5 +1,5 @@
 /*!
- * jQuery QueryBuilder 1.0.10
+ * jQuery QueryBuilder 1.0.11
  * Copyright 2014-2019 Damien "Mistic" Sorel (http://www.strangeplanet.fr)
  * Licensed under MIT (https://opensource.org/licenses/MIT)
  */
@@ -378,7 +378,7 @@ QueryBuilder.DEFAULTS = {
   conditions: ['AND', 'OR'],
   default_condition: 'AND',
   inputs_separator: ' , ',
-  select_placeholder: 'Select Field',
+  select_placeholder: '------',
   display_empty_filter: true,
   default_filter: null,
   optgroups: {},
@@ -6143,7 +6143,7 @@ QueryBuilder.extend(/** @lends module:plugins.UniqueFilter.prototype */ {
 
 
 /*!
- * jQuery QueryBuilder 1.0.10
+ * jQuery QueryBuilder 1.0.11
  * Locale: English (en)
  * Author: Damien "Mistic" Sorel, http://www.strangeplanet.fr
  * Licensed under MIT (https://opensource.org/licenses/MIT)
