@@ -1,5 +1,5 @@
 /*!
- * jQuery QueryBuilder 1.0.13
+ * jQuery QueryBuilder 1.0.14
  * Copyright 2014-2019 Damien "Mistic" Sorel (http://www.strangeplanet.fr)
  * Licensed under MIT (https://opensource.org/licenses/MIT)
  */
@@ -1308,6 +1308,11 @@ QueryBuilder.prototype.createRuleInput = function(rule) {
 * @private
 */
 QueryBuilder.prototype.updateRuleFilter = function(rule, previousFilter) {
+  //Reset filter
+  rule.$el.find(QueryBuilder.selectors.tooltip).hide();
+  rule.$el.find(QueryBuilder.selectors.tooltip).attr("data-tooltip", "");
+  rule.$el.find(QueryBuilder.selectors.description).html("");
+
   var tooltip = rule.filter.tooltip;
   var description = rule.filter.description;
   
@@ -1316,7 +1321,7 @@ QueryBuilder.prototype.updateRuleFilter = function(rule, previousFilter) {
 
   rule.$el.find(QueryBuilder.selectors.rule_filter).val(rule.filter ? rule.filter.id : '-1');
   if(tooltip) {
-    rule.$el.find(QueryBuilder.selectors.tooltip).find('i').show();
+    rule.$el.find(QueryBuilder.selectors.tooltip).show();
     rule.$el.find(QueryBuilder.selectors.tooltip).attr("data-tooltip", tooltip);
   }
   if(description) {
@@ -2697,11 +2702,11 @@ QueryBuilder.templates.group = '\
   <div class="rules-group-header"> \
     <div class="btn-group pull-right group-actions"> \
       <div data-tooltip="{{= it.translate("add_rule") }}">\
-        <img src="{{= it.icons.add_group }}" style="width: 18px;" data-add="rule"/> &nbsp;\
+        <img src="{{= it.icons.add_rule }}" style="width: 18px;" data-add="rule"/> &nbsp;\
       </div>\
       {{? it.settings.allow_groups===-1 || it.settings.allow_groups>=it.level }} \
         <div data-tooltip="{{= it.translate("add_group") }}">\
-          <img src="{{= it.icons.add_rule }}" style="width: 18px;" data-add="group"/> \
+          <img src="{{= it.icons.add_group }}" style="width: 18px;" data-add="group"/> \
         </div>\
       {{?}} \
       {{? it.level>1 }} \
@@ -2742,7 +2747,7 @@ QueryBuilder.templates.rule = '\
     {{? it.settings.display_errors }} \
       <div class="error-container"><i class="{{= it.icons.error }}"></i></div> \
     {{?}} \
-    <div class="tooltip-container"><i style="display:none;" class="{{= it.icons.tooltip }}"></i></div> \
+    <div class="tooltip-container" style="display:none;"><i class="{{= it.icons.tooltip }}"></i></div> \
   </div>\
   <div class="description-container"></div> \
 </div>';
@@ -6143,7 +6148,7 @@ QueryBuilder.extend(/** @lends module:plugins.UniqueFilter.prototype */ {
 
 
 /*!
- * jQuery QueryBuilder 1.0.13
+ * jQuery QueryBuilder 1.0.14
  * Locale: English (en)
  * Author: Damien "Mistic" Sorel, http://www.strangeplanet.fr
  * Licensed under MIT (https://opensource.org/licenses/MIT)

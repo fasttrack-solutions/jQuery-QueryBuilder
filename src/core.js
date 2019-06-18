@@ -748,6 +748,11 @@ QueryBuilder.prototype.createRuleInput = function(rule) {
 * @private
 */
 QueryBuilder.prototype.updateRuleFilter = function(rule, previousFilter) {
+  //Reset filter
+  rule.$el.find(QueryBuilder.selectors.tooltip).hide();
+  rule.$el.find(QueryBuilder.selectors.tooltip).attr("data-tooltip", "");
+  rule.$el.find(QueryBuilder.selectors.description).html("");
+
   var tooltip = rule.filter.tooltip;
   var description = rule.filter.description;
   
@@ -756,7 +761,7 @@ QueryBuilder.prototype.updateRuleFilter = function(rule, previousFilter) {
 
   rule.$el.find(QueryBuilder.selectors.rule_filter).val(rule.filter ? rule.filter.id : '-1');
   if(tooltip) {
-    rule.$el.find(QueryBuilder.selectors.tooltip).find('i').show();
+    rule.$el.find(QueryBuilder.selectors.tooltip).show();
     rule.$el.find(QueryBuilder.selectors.tooltip).attr("data-tooltip", tooltip);
   }
   if(description) {

@@ -3,11 +3,11 @@ QueryBuilder.templates.group = '\
   <div class="rules-group-header"> \
     <div class="btn-group pull-right group-actions"> \
       <div data-tooltip="{{= it.translate("add_rule") }}">\
-        <img src="{{= it.icons.add_group }}" style="width: 18px;" data-add="rule"/> &nbsp;\
+        <img src="{{= it.icons.add_rule }}" style="width: 18px;" data-add="rule"/> &nbsp;\
       </div>\
       {{? it.settings.allow_groups===-1 || it.settings.allow_groups>=it.level }} \
         <div data-tooltip="{{= it.translate("add_group") }}">\
-          <img src="{{= it.icons.add_rule }}" style="width: 18px;" data-add="group"/> \
+          <img src="{{= it.icons.add_group }}" style="width: 18px;" data-add="group"/> \
         </div>\
       {{?}} \
       {{? it.level>1 }} \
@@ -48,7 +48,7 @@ QueryBuilder.templates.rule = '\
     {{? it.settings.display_errors }} \
       <div class="error-container"><i class="{{= it.icons.error }}"></i></div> \
     {{?}} \
-    <div class="tooltip-container"><i style="display:none;" class="{{= it.icons.tooltip }}"></i></div> \
+    <div class="tooltip-container" style="display:none;"><i class="{{= it.icons.tooltip }}"></i></div> \
   </div>\
   <div class="description-container"></div> \
 </div>';
