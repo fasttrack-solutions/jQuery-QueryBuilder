@@ -1,5 +1,5 @@
 /*!
- * jQuery QueryBuilder 1.0.12
+ * jQuery QueryBuilder 1.0.13
  * Copyright 2014-2019 Damien "Mistic" Sorel (http://www.strangeplanet.fr)
  * Licensed under MIT (https://opensource.org/licenses/MIT)
  */
@@ -2697,16 +2697,16 @@ QueryBuilder.templates.group = '\
   <div class="rules-group-header"> \
     <div class="btn-group pull-right group-actions"> \
       <div data-tooltip="{{= it.translate("add_rule") }}">\
-        <img src="../assets/add-icon.svg" style="width: 18px;" data-add="rule"/> &nbsp;\
+        <img src="{{= it.icons.add_group }}" style="width: 18px;" data-add="rule"/> &nbsp;\
       </div>\
       {{? it.settings.allow_groups===-1 || it.settings.allow_groups>=it.level }} \
         <div data-tooltip="{{= it.translate("add_group") }}">\
-          <img src="../assets/actiongroup.svg" style="width: 18px;" data-add="group"/> \
+          <img src="{{= it.icons.add_rule }}" style="width: 18px;" data-add="group"/> \
         </div>\
       {{?}} \
       {{? it.level>1 }} \
         <div data-tooltip="{{= it.translate("delete_group") }}">\
-          <img src="../assets/deletePink.svg" style="width: 16px;" data-delete="group"/> \
+          <img src="{{= it.icons.remove_group }}" style="width: 16px;" data-delete="group"/> \
         </div>\
       {{?}} \
     </div> \
@@ -2732,7 +2732,7 @@ QueryBuilder.templates.rule = '\
     <div class="rule-header"> \
       <div class="btn-group pull-right rule-actions"> \
         <div data-tooltip="{{= it.translate("delete_rule") }}">\
-          <img src="../assets/deletePink.svg" style="width: 16px;" data-delete="rule"/> \
+          <img src="{{= it.icons.remove_rule }}" style="width: 16px;" data-delete="rule"/> \
         </div> \
       </div> \
     </div> \
@@ -6143,7 +6143,7 @@ QueryBuilder.extend(/** @lends module:plugins.UniqueFilter.prototype */ {
 
 
 /*!
- * jQuery QueryBuilder 1.0.12
+ * jQuery QueryBuilder 1.0.13
  * Locale: English (en)
  * Author: Damien "Mistic" Sorel, http://www.strangeplanet.fr
  * Licensed under MIT (https://opensource.org/licenses/MIT)

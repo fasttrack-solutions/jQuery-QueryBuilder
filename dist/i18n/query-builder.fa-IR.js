@@ -1,5 +1,5 @@
 /*!
- * jQuery QueryBuilder 1.0.12
+ * jQuery QueryBuilder 1.0.13
  * Locale: Farsi (fa-ir)
  * Author: Behzad Sedighzade, behzad.sedighzade@gmail.com
  * Licensed under MIT (https://opensource.org/licenses/MIT)

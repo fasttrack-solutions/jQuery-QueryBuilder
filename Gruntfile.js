@@ -116,14 +116,6 @@ module.exports = function(grunt) {
             doc_script: {
                 src: 'build/jsdoc.js',
                 dest: 'doc/js/custom.js'
-            },
-            assets: {
-              files: [{
-                expand: true,
-                flatten: true,
-                src: ['src/assets/*'],
-                dest: 'dist/assets'
-              }]
             }
         },
 
@@ -411,10 +403,6 @@ module.exports = function(grunt) {
         'usebanner:css'
     ]);
 
-    grunt.registerTask('copy_assets', [
-      'copy:assets'
-  ]);
-
     grunt.registerTask('build_lang', [
         'concat:lang'
     ]);
@@ -422,8 +410,7 @@ module.exports = function(grunt) {
     grunt.registerTask('default', [
         'build_lang',
         'build_js',
-        'build_css',
-        'copy_assets'
+        'build_css'
     ]);
 
     grunt.registerTask('test', [
