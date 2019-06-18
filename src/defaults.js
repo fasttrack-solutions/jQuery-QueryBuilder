@@ -135,7 +135,7 @@ QueryBuilder.DEFAULTS = {
   conditions: ['AND', 'OR'],
   default_condition: 'AND',
   inputs_separator: ' , ',
-  select_placeholder: '------',
+  select_placeholder: 'Select Field',
   display_empty_filter: true,
   default_filter: null,
   optgroups: {},
