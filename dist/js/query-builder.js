@@ -1,5 +1,5 @@
 /*!
- * jQuery QueryBuilder 1.0.14
+ * jQuery QueryBuilder 1.0.15
  * Copyright 2014-2019 Damien "Mistic" Sorel (http://www.strangeplanet.fr)
  * Licensed under MIT (https://opensource.org/licenses/MIT)
  */
@@ -1311,7 +1311,7 @@ QueryBuilder.prototype.updateRuleFilter = function(rule, previousFilter) {
   //Reset filter
   rule.$el.find(QueryBuilder.selectors.tooltip).hide();
   rule.$el.find(QueryBuilder.selectors.tooltip).attr("data-tooltip", "");
-  rule.$el.find(QueryBuilder.selectors.description).html("");
+  rule.$el.find(QueryBuilder.selectors.description).hide().find("span").text("");
 
   var tooltip = rule.filter.tooltip;
   var description = rule.filter.description;
@@ -1325,7 +1325,7 @@ QueryBuilder.prototype.updateRuleFilter = function(rule, previousFilter) {
     rule.$el.find(QueryBuilder.selectors.tooltip).attr("data-tooltip", tooltip);
   }
   if(description) {
-    rule.$el.find(QueryBuilder.selectors.description).html('<span>' + description + '</span>');
+    rule.$el.find(QueryBuilder.selectors.description).show().find("span").text(description);
   }
   
   // clear rule data if the filter changed
@@ -2749,7 +2749,7 @@ QueryBuilder.templates.rule = '\
     {{?}} \
     <div class="tooltip-container" style="display:none;"><i class="{{= it.icons.tooltip }}"></i></div> \
   </div>\
-  <div class="description-container"></div> \
+  <div class="description-container"><img src="{{= it.icons.description }}" style="width: 12px;" data-delete="rule"/> <span></span>\</div> \
 </div>';
 
 QueryBuilder.templates.filterSelect = '\
@@ -6148,7 +6148,7 @@ QueryBuilder.extend(/** @lends module:plugins.UniqueFilter.prototype */ {
 
 
 /*!
- * jQuery QueryBuilder 1.0.14
+ * jQuery QueryBuilder 1.0.15
  * Locale: English (en)
  * Author: Damien "Mistic" Sorel, http://www.strangeplanet.fr
  * Licensed under MIT (https://opensource.org/licenses/MIT)

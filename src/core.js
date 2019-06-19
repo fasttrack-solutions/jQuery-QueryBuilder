@@ -751,7 +751,7 @@ QueryBuilder.prototype.updateRuleFilter = function(rule, previousFilter) {
   //Reset filter
   rule.$el.find(QueryBuilder.selectors.tooltip).hide();
   rule.$el.find(QueryBuilder.selectors.tooltip).attr("data-tooltip", "");
-  rule.$el.find(QueryBuilder.selectors.description).html("");
+  rule.$el.find(QueryBuilder.selectors.description).hide().find("span").text("");
 
   var tooltip = rule.filter.tooltip;
   var description = rule.filter.description;
@@ -765,7 +765,7 @@ QueryBuilder.prototype.updateRuleFilter = function(rule, previousFilter) {
     rule.$el.find(QueryBuilder.selectors.tooltip).attr("data-tooltip", tooltip);
   }
   if(description) {
-    rule.$el.find(QueryBuilder.selectors.description).html('<span>' + description + '</span>');
+    rule.$el.find(QueryBuilder.selectors.description).show().find("span").text(description);
   }
   
   // clear rule data if the filter changed
