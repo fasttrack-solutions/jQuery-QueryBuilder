@@ -276,7 +276,7 @@
 
 
 /*!
- * jQuery QueryBuilder 1.0.15
+ * jQuery QueryBuilder 1.0.17
  * Copyright 2014-2019 Damien "Mistic" Sorel (http://www.strangeplanet.fr)
  * Licensed under MIT (https://opensource.org/licenses/MIT)
  */
@@ -3026,7 +3026,7 @@ QueryBuilder.templates.rule = '\
     {{?}} \
     <div class="tooltip-container" style="display:none;"><i class="{{= it.icons.tooltip }}"></i></div> \
   </div>\
-  <div class="description-container"><img src="{{= it.icons.description }}" style="width: 12px;" data-delete="rule"/> <span></span>\</div> \
+  <div class="description-container" style="display:none"><img src="{{= it.icons.description }}" style="width: 12px;" data-delete="rule"/> <span></span>\</div> \
 </div>';
 
 QueryBuilder.templates.filterSelect = '\
@@ -6425,7 +6425,7 @@ QueryBuilder.extend(/** @lends module:plugins.UniqueFilter.prototype */ {
 
 
 /*!
- * jQuery QueryBuilder 1.0.15
+ * jQuery QueryBuilder 1.0.17
  * Locale: English (en)
  * Author: Damien "Mistic" Sorel, http://www.strangeplanet.fr
  * Licensed under MIT (https://opensource.org/licenses/MIT)
