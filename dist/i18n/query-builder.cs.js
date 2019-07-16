@@ -1,5 +1,5 @@
 /*!
- * jQuery QueryBuilder 1.0.20
+ * jQuery QueryBuilder 1.0.21
  * Locale: Čeština (cs)
  * Author: Megaplan, mborisv <bm@megaplan.ru>
  * Licensed under MIT (https://opensource.org/licenses/MIT)
