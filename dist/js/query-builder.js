@@ -1,5 +1,5 @@
 /*!
- * jQuery QueryBuilder 1.0.19
+ * jQuery QueryBuilder 1.0.20
  * Copyright 2014-2019 Damien "Mistic" Sorel (http://www.strangeplanet.fr)
  * Licensed under MIT (https://opensource.org/licenses/MIT)
  */
@@ -1826,7 +1826,7 @@ QueryBuilder.prototype.getRules = function(options) {
                 type: rule.filter ? rule.filter.type : null,
                 input: rule.filter ? rule.filter.input : null,
                 operator: rule.operator ? rule.operator.type : null,
-                value: rule.filter.type == "boolean" ? (value ? "1" : "0") : value
+                value: value
             };
 
             if (rule.filter && rule.filter.data || rule.data) {
@@ -6148,7 +6148,7 @@ QueryBuilder.extend(/** @lends module:plugins.UniqueFilter.prototype */ {
 
 
 /*!
- * jQuery QueryBuilder 1.0.19
+ * jQuery QueryBuilder 1.0.20
  * Locale: English (en)
  * Author: Damien "Mistic" Sorel, http://www.strangeplanet.fr
  * Licensed under MIT (https://opensource.org/licenses/MIT)
