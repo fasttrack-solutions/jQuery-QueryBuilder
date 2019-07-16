@@ -1,5 +1,5 @@
 /*!
- * jQuery QueryBuilder 1.2.0
+ * jQuery QueryBuilder 1.2.1
  * Locale: Swahili (sw)
  * Author: Timothy Anyona
  * Licensed under MIT (https://opensource.org/licenses/MIT)
