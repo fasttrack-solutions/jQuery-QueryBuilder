@@ -1,5 +1,5 @@
 /*!
- * jQuery QueryBuilder 1.0.18
+ * jQuery QueryBuilder 1.0.19
  * Locale: Brazilian Portuguese (pr-BR)
  * Author: Leandro Gehlen, leandrogehlen@gmail.com; Marcos Ferretti, marcosvferretti@gmail.com
  * Licensed under MIT (https://opensource.org/licenses/MIT)

@@ -1,5 +1,5 @@
 /*!
- * jQuery QueryBuilder 1.0.18
+ * jQuery QueryBuilder 1.0.19
  * Locale: Romanian (ro)
  * Author: ArianServ
  * Licensed under MIT (https://opensource.org/licenses/MIT)
