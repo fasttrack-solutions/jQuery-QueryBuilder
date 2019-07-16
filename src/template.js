@@ -50,7 +50,7 @@ QueryBuilder.templates.rule = '\
     {{?}} \
     <div class="tooltip-container" style="display:none;"><i class="{{= it.icons.tooltip }}"></i></div> \
   </div>\
-  <div class="description-container" style="display:none"><img src="{{= it.icons.description }}" style="width: 12px;" data-delete="rule"/> <span></span>\</div> \
+  <div class="description-container" style="display:none"><img src="{{= it.icons.description }}" style="width: 12px;"/> <span></span>\</div> \
 </div>';
 
 QueryBuilder.templates.filterSelect = '\
