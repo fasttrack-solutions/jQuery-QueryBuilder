@@ -377,7 +377,7 @@ QueryBuilder.DEFAULTS = {
   allow_empty: false,
   conditions: ['AND', 'OR'],
   default_condition: 'AND',
-  inputs_separator: ' , ',
+  inputs_separator: " <span class='separator'>AND</span> ",
   select_placeholder: '------',
   display_empty_filter: true,
   default_filter: null,
