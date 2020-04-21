@@ -377,7 +377,7 @@ QueryBuilder.DEFAULTS = {
   allow_empty: false,
   conditions: ['AND', 'OR'],
   default_condition: 'AND',
-  inputs_separator: "<span class='separator'>AND</span>",
+  inputs_separator: ' , ',
   select_placeholder: '------',
   display_empty_filter: true,
   default_filter: null,
@@ -2530,8 +2530,15 @@ QueryBuilder.prototype.setRuleInputValue = function(rule, value) {
                     if (operator.multiple && filter.value_separator && $.isArray(value[i])) {
                         value[i] = value[i].join(filter.value_separator);
                     }
-                    $value.find('[name=' + name + ']').val(value[i]).trigger('change');
-                    break;
+                    if (operator.type === 'between') {
+
+                        var arrval = value.split(",");
+                        $value.find('[name=' + name + ']').val(arrval[i]).trigger('change');
+
+                    } else {
+
+                        $value.find('[name=' + name + ']').val(value[i]).trigger('change');
+                    }                    break;
             }
         }
     }

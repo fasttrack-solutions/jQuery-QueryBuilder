@@ -3,7 +3,7 @@
  *
  * Copyright 2014-2016 Damien "Mistic" Sorel (http://www.strangeplanet.fr)
  * Licensed under MIT (http://opensource.org/licenses/MIT)
- * 
+ *
  * Based on jQuery.extend by jQuery Foundation, Inc. and other contributors
  */
 
@@ -1592,7 +1592,7 @@ QueryBuilder.prototype.updateRuleFilter = function(rule, previousFilter) {
 
   var tooltip = rule.filter.tooltip;
   var description = rule.filter.description;
-  
+
   this.createRuleOperators(rule);
   this.createRuleInput(rule);
 
@@ -1604,7 +1604,7 @@ QueryBuilder.prototype.updateRuleFilter = function(rule, previousFilter) {
   if(description) {
     rule.$el.find(QueryBuilder.selectors.description).show().find("span").text(description);
   }
-  
+
   // clear rule data if the filter changed
   if (previousFilter && rule.filter && previousFilter.id !== rule.filter.id) {
       rule.data = undefined;
@@ -2807,7 +2807,15 @@ QueryBuilder.prototype.setRuleInputValue = function(rule, value) {
                     if (operator.multiple && filter.value_separator && $.isArray(value[i])) {
                         value[i] = value[i].join(filter.value_separator);
                     }
-                    $value.find('[name=' + name + ']').val(value[i]).trigger('change');
+                    if (operator.type === 'between') {
+
+                        var arrval = value.split(",");
+                        $value.find('[name=' + name + ']').val(arrval[i]).trigger('change');
+
+                    } else {
+
+                        $value.find('[name=' + name + ']').val(value[i]).trigger('change');
+                    }
                     break;
             }
         }
