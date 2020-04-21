@@ -377,7 +377,7 @@ QueryBuilder.DEFAULTS = {
   allow_empty: false,
   conditions: ['AND', 'OR'],
   default_condition: 'AND',
-  inputs_separator: ' , ',
+  inputs_separator: "<span class='separator'>AND</span>",
   select_placeholder: '------',
   display_empty_filter: true,
   default_filter: null,
@@ -1315,7 +1315,7 @@ QueryBuilder.prototype.updateRuleFilter = function(rule, previousFilter) {
 
   var tooltip = rule.filter.tooltip;
   var description = rule.filter.description;
-  
+
   this.createRuleOperators(rule);
   this.createRuleInput(rule);
 
@@ -1327,7 +1327,7 @@ QueryBuilder.prototype.updateRuleFilter = function(rule, previousFilter) {
   if(description) {
     rule.$el.find(QueryBuilder.selectors.description).show().find("span").text(description);
   }
-  
+
   // clear rule data if the filter changed
   if (previousFilter && rule.filter && previousFilter.id !== rule.filter.id) {
       rule.data = undefined;

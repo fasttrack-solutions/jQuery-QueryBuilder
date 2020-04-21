@@ -311,7 +311,7 @@ QueryBuilder.prototype.getRules = function(options) {
 
     }(this.model.root));
 
-    out.valid = valid;
+    // out.valid = valid;
 
     /**
      * Modifies the result of the {@link QueryBuilder#getRules} method
