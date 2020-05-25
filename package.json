@@ -62,7 +62,7 @@
   "homepage": "https://querybuilder.js.org",
   "repository": {
     "type": "git",
-    "url": "github.com:fasttrack-solutions/jQuery-QueryBuilder.git"
+    "url": "git+https://github.com/fasttrack-solutions/jQuery-QueryBuilder.git"
   },
   "bugs": {
     "url": "https://github.com/mistic100/jQuery-QueryBuilder/issues"
