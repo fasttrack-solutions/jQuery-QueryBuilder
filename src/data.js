@@ -47,6 +47,10 @@ QueryBuilder.prototype._validateValue = function(rule, value) {
         value = [value];
     }
 
+    if (operator.type === "between") {
+        value = value.toString().split(",");
+    }
+
     for (var i = 0; i < operator.nb_inputs; i++) {
         if (!operator.multiple && $.isArray(value[i]) && value[i].length > 1) {
             result = ['operator_not_multiple', operator.type, this.translate('operators', operator.type)];
@@ -82,7 +86,7 @@ QueryBuilder.prototype._validateValue = function(rule, value) {
                 break;
 
             default:
-                tempValue = value.toString().split(',')[i];
+                tempValue = $.isArray(value[i]) ? value[i] : [value[i]];
 
                 for (var j = 0; j < tempValue.length; j++) {
                     switch (QueryBuilder.types[filter.type]) {
