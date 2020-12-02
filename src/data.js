@@ -47,6 +47,10 @@ QueryBuilder.prototype._validateValue = function(rule, value) {
         value = [value];
     }
 
+    if (operator.type === "between") {
+        value = value.toString().split(",");
+    }
+
     for (var i = 0; i < operator.nb_inputs; i++) {
         if (!operator.multiple && $.isArray(value[i]) && value[i].length > 1) {
             result = ['operator_not_multiple', operator.type, this.translate('operators', operator.type)];
@@ -499,17 +503,7 @@ QueryBuilder.prototype.setRuleInputValue = function(rule, value) {
                     if (operator.multiple && filter.value_separator && $.isArray(value[i])) {
                         value[i] = value[i].join(filter.value_separator);
                     }
-
-                    if (operator.type === 'between') {
-
-                        var arrval = value.split(",");
-                        $value.find('[name=' + name + ']').val(arrval[i]).trigger('change');
-
-                    } else {
-
-                        $value.find('[name=' + name + ']').val(value[i]).trigger('change');
-                    }
-
+                    $value.find('[name=' + name + ']').val(value[i]).trigger('change');
                     break;
             }
         }
