@@ -1,5 +1,5 @@
 /*!
- * jQuery QueryBuilder 1.2.7
+ * jQuery QueryBuilder 1.2.9
  * Locale: Azerbaijan (az)
  * Author: Megaplan, mborisv <bm@megaplan.ru>
  * Licensed under MIT (https://opensource.org/licenses/MIT)
