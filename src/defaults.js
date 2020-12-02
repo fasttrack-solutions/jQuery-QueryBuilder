@@ -56,7 +56,7 @@ QueryBuilder.selectors = {
   value_container:      '.rule-value-container',
   error_container:      '.error-container',
   condition_container:  '.rules-group-header .group-conditions',
-  tooltip:              '.tooltip-container i',
+  tooltip:              '.tooltip-container',
   description:          '.description-container',
 
   rule_header:          '.rule-header',
@@ -134,7 +134,7 @@ QueryBuilder.DEFAULTS = {
   allow_empty: false,
   conditions: ['AND', 'OR'],
   default_condition: 'AND',
-  inputs_separator: ' , ',
+  inputs_separator: " <span class='separator'>AND</span> ",
   select_placeholder: '------',
   display_empty_filter: true,
   default_filter: null,
@@ -194,6 +194,6 @@ QueryBuilder.DEFAULTS = {
       remove_group: 'glyphicon glyphicon-remove',
       remove_rule:  'glyphicon glyphicon-remove',
       error:        'glyphicon glyphicon-warning-sign',
-      tooltip:      'glyphicon glyphicon-info-sign'
+      tooltip:      'glyphicon glyphicon-info-sign',
   }
 };

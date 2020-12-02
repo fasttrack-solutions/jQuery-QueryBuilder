@@ -51,7 +51,7 @@ QueryBuilder.prototype.checkFilters = function(filters) {
       }
 
       if (!filter.input) {
-          filter.input = QueryBuilder.types[filter.type] === 'number' ? 'number' : 'text';
+          filter.input = 'text';
       }
       else if (typeof filter.input != 'function' && QueryBuilder.inputs.indexOf(filter.input) == -1) {
           Utils.error('Config', 'Invalid input "{0}"', filter.input);
@@ -748,6 +748,11 @@ QueryBuilder.prototype.createRuleInput = function(rule) {
 * @private
 */
 QueryBuilder.prototype.updateRuleFilter = function(rule, previousFilter) {
+  //Reset filter
+  rule.$el.find(QueryBuilder.selectors.tooltip).hide();
+  rule.$el.find(QueryBuilder.selectors.tooltip).attr("data-tooltip", "");
+  rule.$el.find(QueryBuilder.selectors.description).hide().find("span").text("");
+
   var tooltip = rule.filter.tooltip;
   var description = rule.filter.description;
   
@@ -756,9 +761,12 @@ QueryBuilder.prototype.updateRuleFilter = function(rule, previousFilter) {
 
   rule.$el.find(QueryBuilder.selectors.rule_filter).val(rule.filter ? rule.filter.id : '-1');
   if(tooltip) {
-    rule.$el.find(QueryBuilder.selectors.tooltip).attr("title", tooltip).show();
+    rule.$el.find(QueryBuilder.selectors.tooltip).show();
+    rule.$el.find(QueryBuilder.selectors.tooltip).attr("data-tooltip", tooltip);
   }
-  rule.$el.find(QueryBuilder.selectors.description).html(description);
+  if(description) {
+    rule.$el.find(QueryBuilder.selectors.description).show().find("span").text(description);
+  }
   
   // clear rule data if the filter changed
   if (previousFilter && rule.filter && previousFilter.id !== rule.filter.id) {
@@ -955,7 +963,7 @@ QueryBuilder.prototype.updateError = function(node) {
 
           node.$el.addClass('has-error')
               .find(QueryBuilder.selectors.error_container).eq(0)
-              .attr('title', errorMessage);
+              .attr('data-tooltip', errorMessage);
       }
   }
 };

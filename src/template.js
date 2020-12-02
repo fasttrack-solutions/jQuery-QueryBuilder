@@ -2,12 +2,18 @@ QueryBuilder.templates.group = '\
 <div id="{{= it.group_id }}" class="rules-group-container"> \
   <div class="rules-group-header"> \
     <div class="btn-group pull-right group-actions"> \
-      <img src="/static/assets/add-icon.svg" style="width: 18px;" data-add="rule" title="{{= it.translate("add_rule") }}"/> &nbsp;\
+      <div data-tooltip="{{= it.translate("add_rule") }}">\
+        <img src="{{= it.icons.add_rule }}" style="width: 18px;" data-add="rule"/> &nbsp;\
+      </div>\
       {{? it.settings.allow_groups===-1 || it.settings.allow_groups>=it.level }} \
-        <img src="/static/assets/group-icon2.svg" style="width: 21px;" data-add="group" title="{{= it.translate("add_group") }}"/> \
+        <div data-tooltip="{{= it.translate("add_group") }}">\
+          <img src="{{= it.icons.add_group }}" style="width: 18px;" data-add="group"/> \
+        </div>\
       {{?}} \
       {{? it.level>1 }} \
-        <img src="/static/assets/delete-icon.svg" style="width: 17px;" data-delete="group" title="{{= it.translate("delete_group") }}"/> \
+        <div data-tooltip="{{= it.translate("delete_group") }}">\
+          <img src="{{= it.icons.remove_group }}" style="width: 16px;" data-delete="group"/> \
+        </div>\
       {{?}} \
     </div> \
     <div class="btn-group group-conditions"> \
@@ -31,18 +37,20 @@ QueryBuilder.templates.rule = '\
   <div class="rule-components"> \
     <div class="rule-header"> \
       <div class="btn-group pull-right rule-actions"> \
-        <img src="/static/assets/delete-icon.svg" style="width: 17px;" data-delete="rule" title="{{= it.translate("delete_rule") }}"/> \
+        <div data-tooltip="{{= it.translate("delete_rule") }}">\
+          <img src="{{= it.icons.remove_rule }}" style="width: 16px;" data-delete="rule"/> \
+        </div> \
       </div> \
     </div> \
-    {{? it.settings.display_errors }} \
-      <div class="error-container"><i class="{{= it.icons.error }}"></i></div> \
-    {{?}} \
     <div class="rule-filter-container"></div> \
     <div class="rule-operator-container"></div> \
     <div class="rule-value-container"></div> \
-    <div class="tooltip-container"><i style="display:none; color: #1D1D1B" class="fa fa-question-circle" data-toggle="tooltip" data-placement="top" title=""></i></div> \
+    {{? it.settings.display_errors }} \
+      <div class="error-container"><i class="{{= it.icons.error }}"></i></div> \
+    {{?}} \
+    <div class="tooltip-container" style="display:none;"><i class="{{= it.icons.tooltip }}"></i></div> \
   </div>\
-  <div class="description-container"></div> \
+  <div class="description-container" style="display:none"><img src="{{= it.icons.description }}" style="width: 12px;"/> <span></span>\</div> \
 </div>';
 
 QueryBuilder.templates.filterSelect = '\

@@ -268,7 +268,7 @@ QueryBuilder.prototype.getRules = function(options) {
                 type: rule.filter ? rule.filter.type : null,
                 input: rule.filter ? rule.filter.input : null,
                 operator: rule.operator ? rule.operator.type : null,
-                value: value
+                value: rule.filter.type == "boolean" ? ((value == true || value == 1 || value == "1") ? "1" : "0") : value
             };
 
             if (rule.filter && rule.filter.data || rule.data) {
@@ -311,7 +311,7 @@ QueryBuilder.prototype.getRules = function(options) {
 
     }(this.model.root));
 
-    out.valid = valid;
+    // out.valid = valid;
 
     /**
      * Modifies the result of the {@link QueryBuilder#getRules} method
