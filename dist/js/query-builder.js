@@ -1,6 +1,6 @@
 /*!
- * jQuery QueryBuilder 1.2.1
- * Copyright 2014-2019 Damien "Mistic" Sorel (http://www.strangeplanet.fr)
+ * jQuery QueryBuilder 1.2.7
+ * Copyright 2014-2020 Damien "Mistic" Sorel (http://www.strangeplanet.fr)
  * Licensed under MIT (https://opensource.org/licenses/MIT)
  */
 (function(root, factory) {
@@ -611,7 +611,7 @@ QueryBuilder.prototype.checkFilters = function(filters) {
       }
 
       if (!filter.input) {
-          filter.input = QueryBuilder.types[filter.type] === 'number' ? 'number' : 'text';
+          filter.input = 'text';
       }
       else if (typeof filter.input != 'function' && QueryBuilder.inputs.indexOf(filter.input) == -1) {
           Utils.error('Config', 'Invalid input "{0}"', filter.input);
@@ -1315,7 +1315,7 @@ QueryBuilder.prototype.updateRuleFilter = function(rule, previousFilter) {
 
   var tooltip = rule.filter.tooltip;
   var description = rule.filter.description;
-
+  
   this.createRuleOperators(rule);
   this.createRuleInput(rule);
 
@@ -1327,7 +1327,7 @@ QueryBuilder.prototype.updateRuleFilter = function(rule, previousFilter) {
   if(description) {
     rule.$el.find(QueryBuilder.selectors.description).show().find("span").text(description);
   }
-
+  
   // clear rule data if the filter changed
   if (previousFilter && rule.filter && previousFilter.id !== rule.filter.id) {
       rule.data = undefined;
@@ -1869,7 +1869,7 @@ QueryBuilder.prototype.getRules = function(options) {
 
     }(this.model.root));
 
-    out.valid = valid;
+    // out.valid = valid;
 
     /**
      * Modifies the result of the {@link QueryBuilder#getRules} method
@@ -2076,6 +2076,10 @@ QueryBuilder.prototype._validateValue = function(rule, value) {
 
     if (rule.operator.nb_inputs === 1) {
         value = [value];
+    }
+
+    if (operator.type === "between") {
+        value = value.toString().split(",");
     }
 
     for (var i = 0; i < operator.nb_inputs; i++) {
@@ -2530,15 +2534,8 @@ QueryBuilder.prototype.setRuleInputValue = function(rule, value) {
                     if (operator.multiple && filter.value_separator && $.isArray(value[i])) {
                         value[i] = value[i].join(filter.value_separator);
                     }
-                    if (operator.type === 'between') {
-
-                        var arrval = value.split(",");
-                        $value.find('[name=' + name + ']').val(arrval[i]).trigger('change');
-
-                    } else {
-
-                        $value.find('[name=' + name + ']').val(value[i]).trigger('change');
-                    }                    break;
+                    $value.find('[name=' + name + ']').val(value[i]).trigger('change');
+                    break;
             }
         }
     }
@@ -6155,7 +6152,7 @@ QueryBuilder.extend(/** @lends module:plugins.UniqueFilter.prototype */ {
 
 
 /*!
- * jQuery QueryBuilder 1.2.1
+ * jQuery QueryBuilder 1.2.7
  * Locale: English (en)
  * Author: Damien "Mistic" Sorel, http://www.strangeplanet.fr
  * Licensed under MIT (https://opensource.org/licenses/MIT)
