@@ -1,5 +1,5 @@
 /*!
- * jQuery QueryBuilder 1.2.9
+ * jQuery QueryBuilder 1.2.10
  * Locale: Greek (el)
  * Author: Stelios Patsatzis, https://www.linkedin.com/in/stelios-patsatzis-89841561
  * Licensed under MIT (https://opensource.org/licenses/MIT)
