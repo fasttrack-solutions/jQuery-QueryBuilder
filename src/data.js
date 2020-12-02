@@ -82,7 +82,7 @@ QueryBuilder.prototype._validateValue = function(rule, value) {
                 break;
 
             default:
-                tempValue = $.isArray(value[i]) ? value[i] : [value[i]];
+                tempValue = value.toString().split(',')[i];
 
                 for (var j = 0; j < tempValue.length; j++) {
                     switch (QueryBuilder.types[filter.type]) {
