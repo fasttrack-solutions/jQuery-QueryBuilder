@@ -47,7 +47,7 @@ QueryBuilder.prototype._validateValue = function(rule, value) {
         value = [value];
     }
 
-    if (operator.type === "between") {
+    if (operator.type === "between" || operator.type === "not_between") {
         value = value.toString().split(",");
     }
 
@@ -228,7 +228,7 @@ QueryBuilder.prototype._validateValue = function(rule, value) {
     if ((rule.operator.type === 'between' || rule.operator.type === 'not_between') && value.length === 2) {
         switch (QueryBuilder.types[filter.type]) {
             case 'number':
-                if (parseFloat(value[0]) > parseFloat(value[1])) {
+                if (parseFloat(value[0]) >= parseFloat(value[1])) {
                     result = ['number_between_invalid', value[0], value[1]];
                 }
                 break;
@@ -503,7 +503,7 @@ QueryBuilder.prototype.setRuleInputValue = function(rule, value) {
                     if (operator.multiple && filter.value_separator && $.isArray(value[i])) {
                         value[i] = value[i].join(filter.value_separator);
                     }
-                    if (operator.type === 'between') {
+                    if (operator.type === 'between' || operator.type === 'not_between') {
                         var arrval = value.split(",");
                         $value.find('[name=' + name + ']').val(arrval[i]).trigger('change');
                     } else {
