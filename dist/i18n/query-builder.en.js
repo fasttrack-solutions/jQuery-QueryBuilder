@@ -1,5 +1,5 @@
 /*!
- * jQuery QueryBuilder 1.2.12
+ * jQuery QueryBuilder 1.2.13
  * Locale: English (en)
  * Author: Damien "Mistic" Sorel, http://www.strangeplanet.fr
  * Licensed under MIT (https://opensource.org/licenses/MIT)
