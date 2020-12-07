@@ -1,5 +1,5 @@
 /*!
- * jQuery QueryBuilder 1.2.10
+ * jQuery QueryBuilder 1.2.12
  * Locale: German (de)
  * Author: "raimu"
  * Licensed under MIT (https://opensource.org/licenses/MIT)
